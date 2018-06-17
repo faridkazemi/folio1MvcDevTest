@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <div ng-controller="homeCtrl">
+        <div style="margin:20px;" class="panel panel-warning">
+            <strong style="margin-bottom:15px;">You are adding a new class</strong>
+            <div class="form-group">
+                <label for="email">Class Name:</label>
+                <input class="form-control" ng-model="editingClass.Name" placeholder="Enter class name">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Location:</label>
+                <select placeholder="Select a location" class="form-control" ng-model="editingClass.Location" ng-options="option.Description for option in model.LocationsList"></select>
+                <!--<input type="password" class="form-control" placeholder="Select a location">-->
+            </div>
+            <div class="form-group">
+                <label for="pwd">Teacher Name:</label>
+                <select placeholder="Select a location" class="form-control" ng-model="editingClass.Teacher" ng-options="option.FirstName for option in model.TeachersList"></select>
+                <!--<input type="password" class="form-control" ng-model="editingClass.Name" placeholder="Select a teacher">-->
+            </div>
+            <button class="btn btn-success" ng-click="Save()">Save</button>
+            <button ng-click="Cancel()" class="btn btn-danger">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>
